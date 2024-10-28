@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    {% block head %}{% endblock %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      {% block heading %}{% endblock %}
+    </div>
+    <div>
+      <main class="main">{% block main %}{% endblock %}</main>
+    </div>
+    <div class="footer">
+      Sofia Salejärvi 2024
+      <br />
+      With Jake Rieger's 
+      <a target="_blank" href="https://www.youtube.com/watch?v=Z1RJmh_OqeA">
+        tutorial
+      </a>
+    </div>
+  </body>
+</html>

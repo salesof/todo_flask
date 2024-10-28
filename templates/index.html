@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}<title>ToDo app</title>{% endblock %}
+{% block heading %}<h1>ToDo app</h1>{% endblock %}
+{% block main %}
+<div class="todoListContainer">
+
+    <div class="todoContainer">
+        <form action="/" method="POST">
+
+            <input
+          class="todoInput"
+          type="text"
+          placeholder="Add new todo here"
+          id="todoText"
+          name="todo"
+        />
+
+        <div class="centeringWrapper">
+            <input
+              class="todoInputButton"
+              type="submit"
+              value="Add Todo"
+            />
+          </div>
+
+        </form>
+      </div>
+
+    <h2 class="todosText">Todos</h2>
+    {% if tasks|length < 1 %}
+      <p>There are no tasks.</p>
+    {% else %}
+    {% for task in tasks %}
+    <div class="todoItem">
+        <div class="todoTextContainer">{{ task.content }}</div>
+        <div class="btnContainer">
+          <a href="/update/{{task.id}}">
+            <button class="bg-default">
+              Edit
+            </button>
+        </a>
+          <a href="/delete/{{task.id}}">
+            <button class="bg-danger">
+              Del
+            </button>
+        </a>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+  {% endif %}
+
+{% endblock %}

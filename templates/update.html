@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}<title>ToDo app</title>{% endblock %}
+{% block heading %}<h1>Edit ToDo</h1>{% endblock %}
+{% block main %}
+<div class="todoListContainer">
+
+    <div class="todoContainer">
+        <form action="/update/{{task.id}}" method="POST">
+
+            <input
+          class="todoInput"
+          type="text"
+          value="{{task.content}}"
+          id="todoText"
+          name="todo"
+        />
+
+        <div class="centeringWrapper">
+            <input
+              class="todoInputButton"
+              type="submit"
+              value="Update Todo"
+            />
+          </div>
+
+        </form>
+      </div>
+    
+  </div>
+
+{% endblock %}
